@@ -1,9 +1,10 @@
 html {
     box-sizing: border-box;
+    color: goldenrod;
 }
 
 body {
-    max-height: 705px;
+    background-color: #181818;
 }
 
 *, *::before, *::after {
@@ -15,47 +16,97 @@ img {
     max-width: 100%;
 }
 
-.page {
-    max-height: 730px;
-    width: 1020px;
+.wrapper {
+    max-height: 800px;
+    max-width: 1000px;
     display: flex;
     flex-direction: column;
-}
-
-.border {
-    height: 700px;
-    width: 1020px;
-    font-family: Calibri, Helvetica, sans-serif;
-    background: url(./images/background.png) no-repeat;
-    /* -webkit-background-size: cover; */
-    background-size: 1020px 705px;
-    display: flex;
     justify-content: center;
-    align-items: center;
 }
 
-.btnPrimary {
+.main {
+    max-height: 540px;
+    max-width: 1000px;
+    font-family: Calibri, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px;
+    border-radius: 15px;
+}
+
+.btnContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 230px;
+    height: 500px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: #202020;
+    border-radius: 20px;
+}
+
+.btn {
+    font-family: Calibri, Helvetica, sans-serif;
     border-radius: 4px;
-    background-color: red;
-    height: 25px;
-    width: 50px;
-    align-self: end;
+    height: 30px;
+    width: 200px;
+    font-size: medium;
+    background: none;
+    border-color: goldenrod;
+    color: goldenrod;
 }
 
 .container {
-    height: 87%;
-    max-width: 91%;
-    flex: 1;
+    max-height: 500px;
+    max-width: 500px;
+    min-width: 250px;
+    min-height: 250px;
+    box-shadow: 10px 5px 5px grey;
     display: flex;
     flex-wrap: wrap;
 }
 
+.header {
+    font-family: Avanta Garde;
+    font-size: 48px;
+    font-weight: 200;
+    text-align: center;
+    text-shadow: 4px 2px goldenrod;
+    color: #101010;
+}
+
 .content {
-    border: 1px black solid;
     background-color: white;
 }
 
 .hoverEffect {
     background-color: black;
-    border: 1px white solid;
+}
+
+#slider {
+    -webkit-appearance: none;
+    background: black;
+    outline: none;
+    border-radius: 20px;
+    color: goldenrod;
+}
+
+#slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px; 
+    height: 15px; 
+    background: white; 
+    border-radius: 20px;
+}
+
+#slider::-moz-range-thumb{
+    width: 25px; 
+    height: 25px; 
+    background: white; 
+    border-radius: 50px;
 }

@@ -39,21 +39,23 @@ function gridSize(number) {
     }
 }
 
-function colorEffect(div) {
-    div.classList.add('hoverEffect');
-}
-
 function clearBoard(div) {
     div.classList.remove('hoverEffect');
+}
+
+function colorEffect(div) {
+    //if (event.type === 'mouseover' && !mouseDown) return;
+    let colorInput = document.querySelector('#color-selector'); 
+    div.style.backgroundColor = colorInput.value;
+   //div.classList.add('hoverEffect');
 }
 
 // first event
 blocksCreation();
 let contentDivs = document.querySelectorAll('.content');
-contentDivs.forEach(div => div.addEventListener('mousemove', function() {
+contentDivs.forEach(div => div.addEventListener('mouseenter', function() {
     colorEffect(div);
 }));
-
 
 // second event and onward
 btn.addEventListener('click', function() {
@@ -62,12 +64,12 @@ btn.addEventListener('click', function() {
     blocksCreation(gSize);
     contentDivs = document.querySelectorAll('.content');
 
-    contentDivs.forEach(div => div.addEventListener('mousemove', function() {
+    contentDivs.forEach(div => div.addEventListener('mouseenter', function() {
         colorEffect(div);
     }));
 });
 
-// slider erases and updates on change to it 
+// slider erases and updates grid size on event
 slider.addEventListener('mouseup', function() {
     sliderValue = slider.value;
     gSize = gridSize(sliderValue);
@@ -77,7 +79,7 @@ slider.addEventListener('mouseup', function() {
     blocksCreation(gridSize(sliderValue));
     contentDivs = document.querySelectorAll('.content');
 
-    contentDivs.forEach(div => div.addEventListener('mousemove', function() {
+    contentDivs.forEach(div => div.addEventListener('mouseenter', function() {
         colorEffect(div);
     }));
 });
